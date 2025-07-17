@@ -1,12 +1,10 @@
 import random
 from fastmcp import FastMCP
 
-# Banco de dados fake
 known_weather_data = {
     "berlin": 20.0
 }
 
-# Instância do MCP server
 mcp = FastMCP("Weather Server 🌤️")
 
 @mcp.tool
@@ -41,6 +39,5 @@ def set_weather(city: str, temp: float) -> str:
     known_weather_data[city] = temp
     return 'OK'
 
-# Inicia o servidor
 if __name__ == "__main__":
     mcp.run()
